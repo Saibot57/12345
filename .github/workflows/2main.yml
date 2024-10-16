@@ -1,0 +1,19 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Remove existing directory or file
+      run: rm -rf StartMenu.jsx
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        ref: main
